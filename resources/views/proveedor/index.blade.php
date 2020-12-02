@@ -23,16 +23,17 @@
                  <td>{{$item->direccion_proveedor}}</td>
                  <td>{{$item->telefono_proveedor}}</td>
                  <td>
-                 <a href="{{route('proveedor.edit',$item)}}">EDITAR</a>
-                 <form action="{{route('proveedor.destroy',$item)}}" method="POST">
-                    @csrf 
-                    @method('delete')
-                    <button style="border: none">ELIMINAR</button>
+                     <div class="d-flex justify-content-begin">
+                     <form action="{{route('proveedor.edit', $item->id)}}">
+                        <button class="btn btn-success btn-xs mr-1">EDITAR</button>
+                     </form>
+                    <form action="{{route('proveedor.destroy', $item->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger btn-xs">ELIMINAR</button>
+                    </form>
+                     </div>
 
-                  
-
-
-                 </form>
                  </td>
              </tr>
          @endforeach

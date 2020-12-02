@@ -27,6 +27,9 @@
                  <td>{{$promotor->fecha_nacimiento}}</td>
                  <td>{{$promotor->ci_promotor}}</td>
                  <td>
+   
+
+
                  <a href="{{route('promotor.edit',$promotor)}}">EDITAR</a>
                  <form action="{{route('promotor.destroy',$promotor)}}" method="POST">
                     @csrf 

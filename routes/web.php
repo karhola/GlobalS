@@ -28,7 +28,8 @@ Route::group([
      Route::resource('/compra', 'CompraController');  
      Route::resource('/promotor', 'PromotorController');  
      Route::resource('/venta', 'VentaController');  
-
+     Route::resource('/producto', 'ProductoController');  
+     Route::resource('/detalleCompra', 'DetalleCompraController'); 
 });
 
 Auth::routes();

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Compra;
 use Illuminate\Http\Request;
-use App\Models\Proveedor;
 
 class CompraController extends Controller
 {
@@ -27,9 +26,7 @@ class CompraController extends Controller
      */
     public function create()
     {
-        return view('compra.create',[ 
-            'proveedors'=>Proveedor::all(),
-        ]);
+        return view('compra.create');
     }
 
     /**
@@ -41,11 +38,7 @@ class CompraController extends Controller
     public function store(Request $request)
     {
         $compra = new Compra();
-        $compra->cantidad_compra = $request->cantidad_compra;
-        $compra->precio_compra = $request->precio_compra;
         $compra->fecha_compra = $request->fecha_compra;
-        $compra->total_compra = $request->total_compra;
-        $compra->proveedor_id = $request->proveedor_id;
         $compra->save();
         return redirect()->route('compra.index');
     }
@@ -69,9 +62,8 @@ class CompraController extends Controller
      */
     public function edit(Compra $compra)
     {
-        return view('compra.edit',[ 
-            'proveedors'=>Proveedor::all(),
-            'compra'=>$compra,
+        return view('compra.edit',[
+            'compra'=>$compra
         ]);
     }
 
@@ -84,12 +76,7 @@ class CompraController extends Controller
      */
     public function update(Request $request, Compra $compra)
     {
-    
-        $compra->cantidad_compra = $request->cantidad_compra;
-        $compra->precio_compra = $request->precio_compra;
         $compra->fecha_compra = $request->fecha_compra;
-        $compra->total_compra = $request->total_compra;
-        $compra->proveedor_id = $request->proveedor_id;
         $compra->update();
         return redirect()->route('compra.index');
     }

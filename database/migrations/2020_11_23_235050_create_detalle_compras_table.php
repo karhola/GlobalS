@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateComprasTable extends Migration
+class CreateDetalleComprasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateComprasTable extends Migration
      */
     public function up()
     {
-        Schema::create('compras', function (Blueprint $table) {
+        Schema::create('detalle_compras', function (Blueprint $table) {
             $table->id();
-            $table->date('fecha_compra');
+            $table->integer('cantidad_compra');
+            $table->integer('total_compra');
+            $table->foreignId('producto_id');
+            $table->foreignId('proveedor_id');
+            $table->foreignId('compra_id');
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ class CreateComprasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('compras');
+        Schema::dropIfExists('detalle_compras');
     }
 }

@@ -99,6 +99,44 @@
             </ul>
           </li>
 
+          <li class="nav-item has-treeview ">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                PRODUCTOS
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <a href="{{route('producto.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ver Producto</p>
+                </a>
+              </li>
+           
+            </ul>
+          </li>
+
+          <li class="nav-item has-treeview ">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                DETALLE DE COMPRA
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <a href="{{route('detalleCompra.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ver Detalle</p>
+                </a>
+              </li>
+           
+            </ul>
+          </li>
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>

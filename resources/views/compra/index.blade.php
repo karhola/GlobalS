@@ -7,11 +7,7 @@
     <thead>
         <tr>
             <td>ID</td>
-            <td>CANTIDAD</td>
-            <td>PRECIO</td>
             <td>FECHA</td>
-            <td>TOTAL</td>
-            <td>PROVEEDOR</td>
             <td>ACCIONES</td>
         </tr>
     </thead>
@@ -19,12 +15,7 @@
         @foreach ($compras as $compra)
         <tr>
            <td>{{$compra->id}}</td>
-           <td>{{$compra->cantidad_compra}}</td>
-           <td>{{$compra->precio_compra}}</td>
            <td>{{$compra->fecha_compra}}</td>
-           <td>{{$compra->total_compra}}</td>
-           <td>{{$compra->proveedor->nombre_proveedor}}</td>
-
            <td>
                <div class="d-flex justify-content-begin">
                     <form action="{{route('compra.edit', $compra->id)}}">
