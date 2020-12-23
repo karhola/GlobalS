@@ -1,8 +1,14 @@
 @extends('admin.layout')
 @section('content')
     <h1>REGISTRO DE PRODUCTOS</h1>
-<form action="{{route('producto.store')}}" method="POST">
+<form action="{{route('producto.store')}}" method="POST"
+enctype="multipart/form-data">
 @csrf
+    <div class="form-group">
+    <label for="">IMAGEN</label>
+    <input type="file" name="pfoto">
+    </div>
+   
     <div class="form-group">
         <label for="">NOMBRE DEL PRODUCTO</label>
         <input type="text" name="nombre_producto" class="form-control">

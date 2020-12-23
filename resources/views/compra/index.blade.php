@@ -1,5 +1,6 @@
 @extends('admin.layout')
 @section('content')
+<h1>COMPRAS</h1>
 <div class="d-flex justify-content-end">
     <a href="{{route('compra.create')}}" class="btn btn-primary">NUEVO</a>
 </div>
