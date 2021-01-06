@@ -3,7 +3,7 @@
     <div class="container mt-1 md-3">
         <div class="row">
             <div class="col-8">
-                {{ $producto->links() }}
+                {{ $productos->links() }}
             </div>
             <div class="col-2 filtros p-5 text-center rounded">
                 <h2>CATEGORIAS</h2><br>
@@ -18,7 +18,7 @@
             <div class="col-1"></div>
             <div class="col-12">
                 <div class="d-flex flex-wrap justify-content-around">
-                    @foreach ($producto as $producto)
+                    @foreach ($productos as $producto)
                         <div class="p-2 m-1 border bg-light text-center">
                             <h3>{{$producto->nombre_producto}}</h3><br>
                             <img src="{{asset('imagenes/'.$producto->pfoto)}}" alt="{{$producto->pfoto}}" height="100px" width="100px"><br>

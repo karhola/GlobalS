@@ -17,7 +17,7 @@ class CreatePromotorsTable extends Migration
             $table->id();
             $table->string('nombre_promotor',45);
             $table->string('apellido_promotor',45);
-            $table->string('direccion_promotor',45);
+            $table->string('direccion_promotor',225);
             $table->integer('celular_promotor');
             $table->date('fecha_nacimiento');
             $table->integer('ci_promotor');

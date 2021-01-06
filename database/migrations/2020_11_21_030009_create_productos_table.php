@@ -21,6 +21,10 @@ class CreateProductosTable extends Migration
             $table->integer('pcompra_producto');
             $table->integer('pventa_producto');
             $table->integer('stock_producto');
+            $table->integer('activo');
+            $table->date('fecha_caducidad');
+            $table->integer('beneficio_promotor');
+            $table->integer('beneficio_oficina');
             $table->foreignId('categoria_id');
             $table->timestamps();
         });

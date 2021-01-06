@@ -72,69 +72,24 @@
                 </div>
             </div>
         </section>
-        <section class="portafolio">
-            <div class="contenedor">
-                <h2 class="titulo">Diversidad de Productos Economicos</h2>
-                <div class="galeria-port">
-                    <div class="imagen-port">
-                        <img src="/img/cocina.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="/img/gloo.gif" alt="">
-                            <p>NUESTRO TRABAJO</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="/img/libro.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="/img/gloo.gif" alt="">
-                            <p>NUESTRO TRABAJO</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="/img/masajeador.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="/img/gloo.gif" alt="">
-                            <p>NUESTRO TRABAJO</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="/img/banquito.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="/img/gloo.gif" alt="">
-                            <p>NUESTRO TRABAJO</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="/img/batidora.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="/img/gloo.gif" alt="">
-                            <p>NUESTRO TRABAJO</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="/img/rompe.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="/img/gloo.gif" alt="">
-                            <p>NUESTRO TRABAJO</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="/img/cara.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="/img/gloo.gif" alt="">
-                            <p>NUESTRO TRABAJO</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="/img/navidad.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="/img/gloo.gif" alt="">
-                            <p>NUESTRO TRABAJO</p>
-                        </div>
+      {{--  @empty(! $productos)
+            <section class="portafolio">
+                <div class="contenedor">
+                    <h2 class="titulo">Lista de productos</h2>
+                    <div class="galeria-port">
+                        @foreach ($productos as $producto)
+                            <div class="imagen-port">
+                                <img src="{{ asset('imagenes/'.$producto->pfoto) }}" alt="{{ $producto->nombre_producto }}">
+                                <div class="hover-galeria">
+                                    <img src="/img/gloo.gif" alt="{{ $producto->nombre_producto }}">
+                                    <p>{{ $producto->nombre_producto }}</p>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endempty--}}
         <section class="container">
             <br>
             <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
@@ -218,17 +173,17 @@
                 <h2 class="titulo">Nuestros Servicios</h2>
                 <div class="servicio-cont">
                     <div class="servicio-ind">
-                        <img src="/img/glo1.jpg" alt="">
+                        <img class="rounded-circle" src="/img/glo1.jpg" alt="">
                         <h3>Name</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, explicabo.</p>
                     </div>
                     <div class="servicio-ind">
-                        <img src="/img/glo1.jpg" alt="">
+                        <img class="rounded-circle" src="/img/glo1.jpg" alt="">
                         <h3>Name</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, explicabo.</p>
                     </div>
                     <div class="servicio-ind">
-                        <img src="/img/glo1.jpg" alt="">
+                        <img class="rounded-circle" src="/img/glo1.jpg" alt="">
                         <h3>Name</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, explicabo.</p>
                     </div>

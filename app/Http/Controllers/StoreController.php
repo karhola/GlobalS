@@ -17,20 +17,21 @@ class StoreController extends Controller
     {
         return view('store.index',[
             'store'=>Store::all(),
+            'productos' => Producto::paginate(20),
             ]);
     }
 
     public function store()
     {
         $categoria = Categoria::all();
-        $producto = Producto::paginate(5);
-        return view('store.store',compact('producto','categoria'));
+        $productos = Producto::paginate(5);
+        return view('store.store',compact('productos','categoria'));
     }
 
     public function show($slug)
     {
-        $producto = Producto::where ('slug',$slug) ->first();
-        return view('store.show',compact('producto'));
+        $productos = Producto::where ('slug',$slug) ->first();
+        return view('store.show',compact('productos'));
     }
 
     public function filtrar($id){

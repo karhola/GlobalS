@@ -14,23 +14,6 @@ class CategoriaSeeder extends Seeder
      */
     public function run()
     {
-        Categoria::create([
-            'nombre_categoria' => 'Cocina'
-        ]);
-        Categoria::create([
-            'nombre_categoria' => 'Educativos'
-        ]);
-        Categoria::create([
-            'nombre_categoria' => 'Bazar'
-        ]);
-        Categoria::create([
-            'nombre_categoria' => 'Ferreteria'
-        ]);
-        Categoria::create([
-            'nombre_categoria' => 'Jugueteria'
-        ]);
-        Categoria::create([
-            'nombre_categoria' => 'Utensilios'
-        ]);
+        Categoria::factory(20)->create();
     }
 }

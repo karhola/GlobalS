@@ -1,151 +1,122 @@
-<!-- Sidebar Menu -->
-<nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-         
-          <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Categoria
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="{{route('categoria.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ver categorias</p>
+<!--  BEGIN SIDEBAR  -->
+<div class="sidebar-wrapper sidebar-theme">
+    <nav id="sidebar">
+        <div class="shadow-bottom"></div>
+        <ul class="list-unstyled menu-categories ps" id="accordionExample">
+            <li class="menu">
+                <a href="#" data-active="true" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Dashboard</span>
+                    </div>
                 </a>
-              </li>
-           
-            </ul>
-          </li>
+                <a href="#submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Categoria</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="submenu" data-parent="#accordionExample">
+                    <li>
+                        <a href="{{ route('categoria.index') }}">Ver categorias</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('categoria.create') }}">Crear categoria</a>
+                    </li>
+                </ul>
+                <a href="#submenu_producto" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Producto</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="submenu_producto" data-parent="#accordionExample">
+                    <li>
+                        <a href="{{ route('producto.index') }}">Ver producto</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('producto.create') }}">Crear producto</a>
+                    </li>
+                </ul>
+                <a href="#submenu_compra" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Compras</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="submenu_compra" data-parent="#accordionExample">
+                    <li>
+                        <a href="{{ route('detalleCompra.index') }}">Ver compras</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('detalleCompra.create') }}">Crear nueva compra</a>
+                    </li>
+                </ul>
+                <a href="#submenu_promotor" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Promotores</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="submenu_promotor" data-parent="#accordionExample">
+                    <li>
+                        <a href="{{ route('promotor.index') }}">Ver promotores</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('promotor.create') }}">Crear promotor</a>
+                    </li>
+                </ul>
+                <a href="#submenu_venta" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Ventas</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="submenu_venta" data-parent="#accordionExample">
+                    <li>
+                        <a href="{{ route('venta.index') }}">Ver venta</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('venta.create') }}">Crear venta</a>
+                    </li>
+                </ul>
 
-          <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Proveedor
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="{{route('proveedor.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ver proveedor</p>
+                <a href="#submenu_pedido" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Pedidos</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
                 </a>
-              </li>
-           
-            </ul>
-          </li>
+                <ul class="collapse submenu list-unstyled" id="submenu_pedido" data-parent="#accordionExample">
+                    <li>
+                        <a href="{{ route('pedido.index') }}">Ver pedido</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('pedido.create') }}">Crear pedido</a>
+                    </li>
+                </ul>
 
-          <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Compra
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="{{route('compra.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ver Compra</p>
-                </a>
-              </li>
-           
-            </ul>
-          </li>
-          
-          <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Promotor
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="{{route('promotor.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ver Promotores</p>
-                </a>
-              </li>
-           
-            </ul>
-          </li>
-          
-          <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                VENTAS
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="{{route('venta.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ver Ventas</p>
-                </a>
-              </li>
-           
-            </ul>
-          </li>
-
-          <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                PRODUCTOS
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="{{route('producto.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ver Producto</p>
-                </a>
-              </li>
-           
-            </ul>
-          </li>
-
-          <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                DETALLE DE COMPRA
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-              <a href="{{route('detalleCompra.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ver Detalle</p>
-                </a>
-              </li>
-           
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
+                
+            </li>
         </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
+    </nav>
+</div>
+<!--  END SIDEBAR  -->
