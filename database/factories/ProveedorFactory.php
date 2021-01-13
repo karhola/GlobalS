@@ -22,7 +22,11 @@ class ProveedorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nombre_proveedor' => $this->faker->firstName,
+            'correo_proveedor' => $this->faker->email,
+            'direccion_proveedor' => $this->faker->address,
+            'telefono_proveedor' => $this->faker->randomNumber($nbDigits=8),
+            'ci_proveedor' => $this->faker->randomNumber($nbDigits=7),
         ];
     }
 }

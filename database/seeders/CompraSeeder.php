@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\Compra;
 use Illuminate\Database\Seeder;
 
 class CompraSeeder extends Seeder
@@ -13,6 +13,6 @@ class CompraSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Compra::factory(10)->create();
     }
 }

@@ -19,6 +19,7 @@ class CreateProveedorsTable extends Migration
             $table->string('correo_proveedor');
             $table->string('direccion_proveedor');
             $table->integer('telefono_proveedor');
+            $table->integer('ci_proveedor');
             $table->timestamps();
         });
     }

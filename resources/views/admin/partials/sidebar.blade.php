@@ -55,10 +55,10 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="submenu_compra" data-parent="#accordionExample">
                     <li>
-                        <a href="{{ route('detalleCompra.index') }}">Ver compras</a>
+                        <a href="{{ route('compra.index') }}">Ver compras</a>
                     </li>
                     <li>
-                        <a href="{{ route('detalleCompra.create') }}">Crear nueva compra</a>
+                        <a href="{{ route('compra.create') }}">Crear nueva compra</a>
                     </li>
                 </ul>
                 <a href="#submenu_promotor" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -111,6 +111,23 @@
                     </li>
                     <li>
                         <a href="{{ route('pedido.create') }}">Crear pedido</a>
+                    </li>
+                </ul>
+                <a href="#submenu_proveedor" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Proveedor</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="submenu_proveedor" data-parent="#accordionExample">
+                    <li>
+                        <a href="{{ route('proveedor.index') }}">Ver proveedor</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('proveedor.create') }}">Crear proveedor</a>
                     </li>
                 </ul>
 

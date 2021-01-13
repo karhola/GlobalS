@@ -23,6 +23,14 @@ class CreatePromotorsTable extends Migration
             $table->integer('ci_promotor');
             $table->timestamps();
         });
+
+        Schema::create('pedido_promotor', function (Blueprint $table){
+            $table->id();
+            $table->foreignId('pedido_id');
+            $table->foreignId('promotor_id');
+          
+            $table->timestamps();
+        });
     }
 
     /**

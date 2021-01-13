@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             PromotorSeeder::class,
             PedidoSeeder::class,
+            CompraSeeder::class,
         ]);
     }
 }

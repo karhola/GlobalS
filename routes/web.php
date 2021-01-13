@@ -41,7 +41,6 @@ Route::group([
     Route::resource('/promotor', 'PromotorController');
     Route::resource('/venta', 'VentaController');
     Route::resource('/producto', 'ProductoController');
-    Route::resource('/detalleCompra', 'DetalleCompraController');
     Route::resource('/pedido', 'PedidoController');
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -17,9 +17,10 @@ class CreatePedidosTable extends Migration
             $table->id();
             $table->date('fecha_entrega');
             $table->date('fecha_devolucion')->nullable();
-            $table->integer('total_cantidad_retenida');
-            $table->integer('total_cantidad_devuelta');
+            $table->integer('cantidad_retenida');
+            $table->integer('cantidad_devuelta');
             $table->boolean('estado_p')->default(false);
+            $table->foreignId('producto_id');
             $table->timestamps();
         });
     }

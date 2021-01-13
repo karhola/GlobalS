@@ -13,6 +13,6 @@ class ProveedorSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
     }
 }

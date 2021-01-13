@@ -1,22 +1,15 @@
 <?php
 
 namespace App\Models;
-
-use App\Models\Proveedor;
 use App\Models\Producto;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Compra extends Model
+class PedidoPromotor extends Model
 {
     use HasFactory;
-    public function proveedor()
-    {
-        return $this->belongsTo(Proveedor::class);
-    }
-    public function producto()
-    {
+    public function productos(){
         return $this->belongsTo(Producto::class);
     }
- 
+    
 }

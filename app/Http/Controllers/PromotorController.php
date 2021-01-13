@@ -56,7 +56,8 @@ class PromotorController extends Controller
      */
     public function show(Promotor $promotor)
     {
-        //
+        $promotor = Promotor::with('pedidos')->find($promotor->id);
+        return view('promotor.show', compact('promotor'));
     }
 
     /**
