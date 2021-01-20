@@ -13,10 +13,10 @@ class CreateDetalleVentaTable extends Migration
      */
     public function up()
     {
-        Schema::create('detalle_venta', function (Blueprint $table) {
+        Schema::create('ventas', function (Blueprint $table) {
             $table->id();
             $table->integer('cantidad_v');
-            $table->integer('fecha_venta');
+            $table->date('fecha_venta');
             $table->integer('total_venta');
             $table->integer('beneficio_total_promotor');
             $table->integer('beneficio_total_oficina');
@@ -24,11 +24,10 @@ class CreateDetalleVentaTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('producto_detalle_venta', function (Blueprint $table) {
+        Schema::create('producto_venta', function (Blueprint $table) {
             $table->id();
             $table->foreignId('producto_id');
-            $table->foreignId('detalle_venta_id');
-            $table->integer('comision');
+            $table->foreignId('venta_id');
             $table->integer('cantidad');
             $table->integer('subtotal');
             $table->integer('beneficio_subtotal_promotor');

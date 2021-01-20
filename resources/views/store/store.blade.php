@@ -1,22 +1,17 @@
 @extends('store.index')
 @section('content')
     <div class="container mt-1 md-3">
+        <br><br>
         <div class="row">
-            <div class="col-8">
-                {{ $productos->links() }}
-            </div>
-            <div class="col-2 filtros p-5 text-center rounded">
+            <div class="col-2">
                 <h2>CATEGORIAS</h2><br>
                 @foreach ($categoria as $categoria)
                     <a href="{{route('store-filtrado', $categoria->id)}}">
                     <h4>{{$categoria->nombre_categoria}}</h4></a>
                 @endforeach
-                    <a href="{{ route('store')}}"><h4>Todos</h4></a>
+                <a href="{{ route('store')}}"><h4>Todos</h4></a>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-12">
+            <div class="col-10">
                 <div class="d-flex flex-wrap justify-content-around">
                     @foreach ($productos as $producto)
                         <div class="p-2 m-1 border bg-light text-center">
@@ -39,6 +34,11 @@
                         </div>
                     @endforeach
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                {{ $productos->links() }}
             </div>
         </div>
     </div>

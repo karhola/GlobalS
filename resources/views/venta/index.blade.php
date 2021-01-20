@@ -1,8 +1,13 @@
 @extends('admin.layout')
+
+@section('content_title')
+    <div class="d-flex justify-content-between mr-4 ml-4 mt-4 align-items-center">
+        <h1>Lista de Ventas</h1>
+        <a href="{{route('venta.create')}}" class="btn btn-primary">NUEVO</a>
+    </div>
+@endsection
+
 @section('content')
-<div class="d-flex justify-content-end">
-    <a href="{{route('venta.create')}}" class="btn btn-primary">NUEVO</a>
-</div>
 <table class="table">
     <thead>
         <tr>

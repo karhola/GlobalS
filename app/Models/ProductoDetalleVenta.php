@@ -2,19 +2,13 @@
 
 namespace App\Models;
 
-use App\Models\Pedido;
 use App\Models\Producto;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Promotor extends Model
+class ProductoDetalleVenta extends Model
 {
     use HasFactory;
-
-    public function pedidos()
-    {
-        return $this->belongsToMany(Pedido::class);
-    }
 
     public function productos()
     {

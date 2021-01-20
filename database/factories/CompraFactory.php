@@ -25,7 +25,7 @@ class CompraFactory extends Factory
             'cantidad_compra' => $this->faker->randomNumber($nbDigits = 3 ),
             'fecha_compra' => $this->faker->date($format= 'Y-m-d', $max='now'),
             'costo_importacion_total' => $this->faker->randomNumber($nbDigits = 3),
-            'SubTotal' => $this->faker->randomNumber($nbDigits = 3),
+           
             'total_compra' => $this->faker->randomNumber($nbDigits = 3),
             'proveedor_id' => Proveedor::factory(),
         ];

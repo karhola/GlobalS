@@ -34,6 +34,9 @@
                     <a href="{{ route('promotor.show', $promotor) }}">Ver pedidos</a>
                 </td>
                 <td>
+                    <a href="{{ route('venta.show', $promotor) }}">Ver ventas</a>
+                </td>
+                <td>
                     <a href="{{route('promotor.edit',$promotor)}}">EDITAR</a>
                     <form action="{{route('promotor.destroy',$promotor)}}" method="POST">
                         @csrf

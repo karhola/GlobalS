@@ -47,13 +47,13 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($compras as $compra)
+        @foreach ($ventas as $venta)
             <tr>
-                <td>{{$compra->id}}</td>
-                <td>{{$compra->cantidad_compra}}</td>
-                <td>{{$compra->fecha_compra}}</td>
-                <td>{{$compra->costo_importacion_total}}</td>
-                <td>{{$compra->total_compra}}</td>
+                <td>{{$venta->id}}</td>
+                <td>{{$venta->cantidad_venta}}</td>
+                <td>{{$venta->fecha_venta}}</td>
+                <td>{{$venta->costo_importacion_total}}</td>
+                <td>{{$venta->total_venta}}</td>
             </tr>
         @endforeach
     </tbody>

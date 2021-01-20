@@ -13,9 +13,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
     <link href="{{ asset('AdminCork/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('AdminCork/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('AdminCork/assets/css/estilo.css') }}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+    @stack('styles')
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
 </head>
@@ -133,7 +135,6 @@
     </div>
     <!-- END MAIN CONTAINER -->
 
-    @stack('scripts')
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
     <script src="{{ asset('AdminCork/assets/js/libs/jquery-3.1.1.min.js') }}"></script>
     <script src="{{ asset('AdminCork/bootstrap/js/popper.min.js') }}"></script>
@@ -149,6 +150,7 @@
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    @stack('scripts')
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 </body>
 </html>

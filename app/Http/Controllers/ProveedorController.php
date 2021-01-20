@@ -14,8 +14,8 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-        $datos = Proveedor::all();
-        return view('proveedor.index',compact('datos'));
+        $proveedors = Proveedor::all();
+        return view('proveedor.index',compact('proveedors'));
     }
 
     /**
@@ -54,7 +54,10 @@ class ProveedorController extends Controller
      */
     public function show(Proveedor $proveedor)
     {
-        return view('proveedor.show', compact('proveedor'));
+        return view('proveedor.show', [
+            'proveedor' => $proveedor,
+            'compras' => $proveedor->compras,
+        ]);
     }
 
     /**

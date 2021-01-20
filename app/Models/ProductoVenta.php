@@ -4,15 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Compra;
 
-class Proveedor extends Model
+class ProductoVenta extends Model
 {
     use HasFactory;
-
-    public function compras()
-    {
-        return $this->hasMany(Compra::class);
-    }
-
 }

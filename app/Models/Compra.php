@@ -2,21 +2,23 @@
 
 namespace App\Models;
 
-use App\Models\Proveedor;
-use App\Models\Producto;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Producto;
+use App\Models\Proveedor;
 
 class Compra extends Model
 {
     use HasFactory;
-    public function proveedor()
+
+    public function productos()
+    {
+        return $this->belongsToMany(Producto::class);
+    }
+
+    public function proveedors()
     {
         return $this->belongsTo(Proveedor::class);
     }
-    public function producto()
-    {
-        return $this->belongsTo(Producto::class);
-    }
- 
+
 }

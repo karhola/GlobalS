@@ -12,7 +12,7 @@
 <body style="background-color: #fff;">
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand"  href="{{ route('compra.index')}}" >Global Sistem</a>
+            <a class="navbar-brand"  href="{{ route('detalleCompra.index')}}" >Global Sistem</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -72,7 +72,7 @@
                 </div>
             </div>
         </section>
-      {{--  @empty(! $productos)
+{{--         
             <section class="portafolio">
                 <div class="contenedor">
                     <h2 class="titulo">Lista de productos</h2>
@@ -88,8 +88,8 @@
                         @endforeach
                     </div>
                 </div>
-            </section>
-        @endempty--}}
+            </section> --}}
+         
         <section class="container">
             <br>
             <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">

@@ -18,7 +18,6 @@ class CreateCompraTable extends Migration
             $table->integer('cantidad_compra');
             $table->date('fecha_compra');
             $table->integer('costo_importacion_total');
-            $table->integer('SubTotal');
             $table->integer('total_compra');
             $table->foreignId('proveedor_id');   
             $table->timestamps();
@@ -26,7 +25,7 @@ class CreateCompraTable extends Migration
         Schema::create('compra_producto', function (Blueprint $table) {
             $table->id();
             $table->foreignId('producto_id');
-            $table->foreignId('detalle_compra_id');
+            $table->foreignId('compra_id');
             $table->integer('cantidad');
             $table->integer('subtotal');
             $table->integer('coste_importacion');

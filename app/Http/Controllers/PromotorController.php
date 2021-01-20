@@ -60,6 +60,12 @@ class PromotorController extends Controller
         return view('promotor.show', compact('promotor'));
     }
 
+    public function showVenta(Promotor $promotor)
+    {
+        $promotor = Promotor::with('productos')->find($promotor->id);
+        return view('promotor.showVenta', compact('promotor'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

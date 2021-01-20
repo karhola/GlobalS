@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use App\Models\Promotor;
+use App\Models\Producto;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,5 +13,10 @@ class Venta extends Model
     public function promotor()
     {
         return $this->belongsTo(Promotor::class);
+    }
+
+    public function productos()
+    {
+        return $this->belongsToMany(Producto::class);
     }
 }

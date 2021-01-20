@@ -31,7 +31,7 @@
                                     <p class="card-text text-start">
                                         <div class="row">
                                             <div class="col-8 text-start">
-                                                {{ $item->attributes->descripcion_producto }}
+                                                {!! $item->attributes->descripcion_producto !!}
                                             </div>
                                         </div>
                                     </p>

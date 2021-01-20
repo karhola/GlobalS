@@ -237,6 +237,14 @@ a.cart .cart-basket {
     background-color: #418deb;
     border-radius: 50%;
 }
+
+.well{
+	background-color: rgba(231, 76, 60,0.2);
+	border: solid 1px rgba(231, 76, 60,0.2);
+	box-shadow: inset 0 1px 1px rgba(0, 0,0, 0.3);
+}
+
+
 @media screen and  (max-width:900px){
     header{
         background-position: center;

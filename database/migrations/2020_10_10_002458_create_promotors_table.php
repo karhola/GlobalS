@@ -26,8 +26,8 @@ class CreatePromotorsTable extends Migration
 
         Schema::create('pedido_promotor', function (Blueprint $table){
             $table->id();
-            $table->foreignId('pedido_id');
             $table->foreignId('promotor_id');
+            $table->foreignId('pedido_id');
           
             $table->timestamps();
         });
