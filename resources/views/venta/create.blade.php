@@ -56,7 +56,7 @@
         </div>
         <div class="col form-group">
             <label for="">Cantidad</label>
-            <input type="number" min="0" value="0" class="form-control" id="cantidadId">
+            <input type="number" min="0" value="0" class="form-control" id="cantidadId" />
         </div>
         <div class="col form-group">
             <label for="">Precio</label>
@@ -129,6 +129,7 @@
                 type: "GET",
                 success: function(data){
                     document.getElementById('cantidadId').value = data.stock_producto;
+                    document.getElementById('cantidadId').max = data.stock_producto;
                     document.getElementById('precioId').value = data.pventa_producto;
                 },
                 error: function(jqXHR, textStatus, errorThrown){
@@ -184,18 +185,19 @@
             });
 
 
-            /* sumar las filas */ 
+            /* sumar las filas */
             // obtenemos todas las filas del tbody
-            const filas = document.querySelectorAll("#productos tbody tr"); 
+            const filas = document.querySelectorAll("#productos tbody tr");
             // bucle por cada una de las filas
-            filas.forEach((fila) => { 
+            filas.forEach((fila) => {
                 // obtenemos los tds de cada fila
                 const tds=fila.querySelectorAll("td");
-                let total=0; 
+                let total=1;
                 // bucle por cada uno de los tds con excepcion el primero (id) y ultimo (total)
-                for(let i=2 ; i<tds.length-1; i++) { 
+                for(let i=2 ; i<tds.length-1; i++) {
                     // sumamos los tds
-                    total += parseFloat(tds[i].innerHTML);
+                    total *= parseFloat(tds[i].innerHTML);
+                    console.log("Soy el total wey "+ total);
                 }
                 // mostramos el total en la ultima casilla
                 tds[tds.length-1].innerHTML=total.toFixed(2);
@@ -216,7 +218,7 @@
                 // mostramos el total en la ultima fila
                 totalFila[i].innerHTML = total.toFixed(2);
                 totalProductos = total;
-            } 
+            }
             // variable total de productos
 
         }

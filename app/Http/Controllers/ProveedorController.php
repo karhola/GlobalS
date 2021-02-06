@@ -41,8 +41,9 @@ class ProveedorController extends Controller
         $datos->correo_proveedor =$request->correo_prove;
         $datos->direccion_proveedor =$request->direccion_prove;
         $datos->telefono_proveedor =$request->telefono_prove;
+        $datos->ci_proveedor =$request->ci_prove;
         $datos->save();
-      
+
         return redirect()->route('proveedor.index');
     }
 

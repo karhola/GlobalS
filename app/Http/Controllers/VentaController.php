@@ -13,7 +13,7 @@ class VentaController extends Controller
     public function index()
     {
         return view('venta.index',[
-            'ventas'=>Venta::all()
+            'ventas'=>Venta::all()->sortByDesc('id')
         ]);
     }
 
@@ -25,12 +25,12 @@ class VentaController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function ventaProducto($id)
+    {
+        $venta = Venta::findOrFail($id);
+        $productos = $venta->productos;
+        return view('venta.detalleVenta', compact('venta', 'productos'));
+    }
     public function store(Request $request)
     {
         $array = explode(',', $request->productos[0]);
@@ -45,8 +45,7 @@ class VentaController extends Controller
 
         $ventaProductos = Venta::all()->last();
         $ventaProductos->productos()->attach($array, [
-            
-            'cantidad' => 23,
+            'cantidad' => 56,
             'subtotal' => 46,
             'beneficio_subtotal_promotor' => '23',
             'beneficio_subtotal_oficina' => '89',

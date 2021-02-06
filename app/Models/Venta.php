@@ -17,6 +17,6 @@ class Venta extends Model
 
     public function productos()
     {
-        return $this->belongsToMany(Producto::class);
+        return $this->belongsToMany(Producto::class)->withPivot('cantidad', 'subtotal', 'beneficio_subtotal_promotor', 'beneficio_subtotal_oficina');
     }
 }

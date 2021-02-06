@@ -16,7 +16,7 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        return view('pedido.index',[
+        return view('pedido.index', [
             'pedidos' => Pedido::all(),
         ]);
     }
@@ -28,9 +28,9 @@ class PedidoController extends Controller
      */
     public function create()
     {
-        return view('pedido.create',[
-            'promotors' => Promotor::all(),
-            'productos' => Producto::all(),
+        return view('pedido.create', [
+            'promotors'=> Promotor::all(),
+            'productos' => Producto::all()
         ]);
     }
 
@@ -42,7 +42,7 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Venta;
 use App\Models\Promotor;
 use Illuminate\Http\Request;
 
@@ -60,10 +61,17 @@ class PromotorController extends Controller
         return view('promotor.show', compact('promotor'));
     }
 
+    public function verpromotor(Promotor $promotor)
+    {
+        $pedidos = Promotor::with('pedidos')->find($promotor->id);
+        $ventas = Venta::where('promotor_id', $promotor->id)->get();
+        return view('promotor.verpromotor', compact('promotor, pedidos, ventas'));
+    }
+
     public function showVenta(Promotor $promotor)
     {
-        $promotor = Promotor::with('productos')->find($promotor->id);
-        return view('promotor.showVenta', compact('promotor'));
+        $ventas = Venta::where('promotor_id', $promotor->id)->get();
+        return view('venta.listaVenta', compact('ventas', 'promotor'));
     }
 
     /**
@@ -88,7 +96,7 @@ class PromotorController extends Controller
      */
     public function update(Request $request, Promotor $promotor)
     {
-  
+
         $promotor->nombre_promotor=$request->nombre_promotor;
         $promotor->apellido_promotor=$request->apellido_promotor;
         $promotor->direccion_promotor=$request->direccion_promotor;

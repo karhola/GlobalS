@@ -1,8 +1,8 @@
-@extends('store.index')
+@extends('store.nav')
 @section('content')
     <div class="container text-center login-container border shadow  rounded p-4">
         <div class="detalle-title">
-            <h1><i class="fa fa shopping-cart"></i>Carrrito de compras</h1>
+            <h1><i class="fa fa shopping-cart"></i>Carrito de Compras</h1>
         </div>
         <div class="table-cart">
             @if( !\Cart::isEmpty() )
@@ -60,6 +60,7 @@
                         <h4 class="fw-normal">
                             Total ({{ $totalQuantity }} productos ) : <span class="fw-bold">{{ $total }}</span>
                         </h4>
+                        <div id="paypal-button-container"></div>
                     </div>
                 </div>
             @else
@@ -68,4 +69,22 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+<script src="https://www.paypal.com/sdk/js?client-id=AYjmQpRe8-TgTOAh73wfwwzOpJ4Gi_GATfzcchKKfdTxK80JPseadb6iwvFZ0ShD5muLWvlB-bq7U_ar"></script>
+<script>
+    paypal.Buttons( {
+      createOrder: function(data, actions)  {
+        // Set up the transaction
+        return actions.order.create( {
+          purchase_units: [ {
+            amount:  {
+              value: '10'
+             }
+           }]
+         });
+       }
+     }).render('#paypal-button-container');
+  </script>
+@endpush
 

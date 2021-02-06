@@ -6,6 +6,8 @@ use App\Models\Store;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Categoria;
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 class StoreController extends Controller
 {
     /**
@@ -15,10 +17,15 @@ class StoreController extends Controller
      */
     public function index()
     {
-        return view('store.index',[
-            'store'=>Store::all(),
-            'productos' => Producto::paginate(20),
-            ]);
+    
+            return view('store.index');
+    }
+
+    public function mensaje(Request $request)
+    {
+    
+        Mail::to('kl98lamas@gmail.com')->send( new ContactanosMailable($request->all()));
+        return view('contacto');
     }
 
     /**
@@ -30,6 +37,13 @@ class StoreController extends Controller
     {
         //
     }
+   
+    public function contacto()
+    {
+    
+            return view('contacto');
+    }
+   
 
     /**
      * Store a newly created resource in storage.
@@ -40,7 +54,7 @@ class StoreController extends Controller
     public function store()
     {
         $categoria = Categoria::all();
-        $productos = Producto::paginate(10);
+        $productos = Producto::paginate(9);
         return view('store.store',compact('productos','categoria'));
     }
 

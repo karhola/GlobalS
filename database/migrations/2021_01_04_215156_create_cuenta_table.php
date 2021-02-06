@@ -13,7 +13,7 @@ class CreateCuentaTable extends Migration
      */
     public function up()
     {
-        Schema::create('cuenta', function (Blueprint $table) {
+        Schema::create('cuentas', function (Blueprint $table) {
             $table->id();
             $table->integer('monto_facturado');
             $table->integer('retiros');

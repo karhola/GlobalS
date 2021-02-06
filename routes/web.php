@@ -3,6 +3,8 @@
 use App\Models\Promotor;
 use Illuminate\Support\Facades\Route;
 
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 Auth::routes();
 
 // Rutas publicas
@@ -10,13 +12,7 @@ Auth::routes();
     //    return Producto::where('slug', $slug)->first();
     //});
 
-Route::get('prueba/holi', function () {
-    $promotor = Promotor::first();
 
-    $promotor->pedidos()->attach(['3', '4', '5', '7']);
-
-    return $promotor->pedidos;
-});
 
 Route::group([
     'namespace' => 'App\Http\Controllers'
@@ -30,7 +26,9 @@ Route::group([
     Route::get('cart/delete/{id}', 'CartController@delete')->name('cart-delete');
     Route::get('cart/trash', 'CartController@trash')->name('cart-trash');
     Route::get('cart/update/{id}', 'CartController@update')->name('cart-update');
-
+    Route::get('contacto', 'StoreController@contacto')->name('contacto');
+    Route::post('mensaje', 'StoreController@mensaje')->name('mensaje');
+  
 });
 
 
@@ -41,15 +39,20 @@ Route::group([
     'namespace' => 'App\Http\Controllers',
     'middleware' => 'auth'
 ], function(){
+    
+    Route::get('/', 'HomeController@index')->name('dashboard');
     Route::resource('/proveedor', 'ProveedorController');
     Route::resource('/categoria', 'CategoriaController');
     //Route::resource('/usuario', 'UsuarioController');
     Route::resource('/compra', 'CompraController');
     Route::resource('/promotor', 'PromotorController');
+    Route::get('/promotor/show/{promotor}', 'PromotorController@verpromotor')->name('ver.promotor');
     Route::get('/promotor/venta/{promotor}', 'PromotorController@showVenta')->name('promotor.showVenta');
+    Route::get('/venta/producto/{id}', 'VentaController@ventaProducto')->name('venta.productos');
     Route::resource('/venta', 'VentaController');
     Route::resource('/producto', 'ProductoController');
     Route::resource('/pedido', 'PedidoController');
     Route::resource('/detalleCompra', 'DetalleCompraController');
+    Route::get('/reporte', 'ReporteController@index')->name('reporte.index');
 });
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -1,167 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fontawesome-free/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/estilos.css')}}">
-    <title>proyecto</title>
+@extends('store.nav')
+@section('content')
+    <div class="text-white fondo">
+        <section class="container">
+            <h3 class="display-5 text-center mt-0 pt-5">GLOBAL SISTEM SANTA CRUZ</h3>
+                <br>
+                <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
+                        <div class="text-white well mb-3 pad"> 
+                            <div class="card-body">
+                                <h4 class="tittles-pages text-center">Formulario de contacto</h4>
+                                <br>
+                            <form class="form-horizontal" role="form" method="POST" action="{{ route('mensaje') }}">
+                                @csrf
+                            <div class="row mb-3">
+                                <div class="input-field col s6">
+                                    <input id="first_name" type="text" class="validate" name="nombre">
+                                   <label for="first_name">First Name</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input id="last_name" type="text" class="validate" name="apellido">
+                                    <label for="last_name">Last Name</label>
+                                  </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="input-field col s12">
+                                    <input id="email" type="email" class="validate" name="email">
+                                    <label for="email">Email</label>
+                                    </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="input-field col s12">
+                                    <textarea id="textarea2" class="materialize-textarea" data-length="120" name="asunto"></textarea>
+                                    <label for="textarea2">Asunto</label>
+                                    </div>
+                            </div>
+                            <div class="row mb-3">
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                        <i class="material-icons prefix">M</i>
+                                        <textarea id="icon_prefix2" class="materialize-textarea" name="mensaje"></textarea>
+                                        <label for="icon_prefix2">Mensaje</label>
+                                        </div>
+                                    </div>
+                            </div>
+                            <button type="submit" style="width: 100%" class="btn btn-primary pull-right">Enviar</button>
+                        </form>
+                            </div>
+                            </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+            <h5 class="text-center mb-0 pb-4">2021 Global Sistem | La actitud hace la diferencia</h5>
+        </section> 
+    </div>
+@endsection
+@push('styles')
     <style>
-        body {
-            background-image: url('{{ asset('img/glo.jpg')}}');
+        @import url(https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css);
+        .fondo {
+            background: #780206;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, hsla(233, 88%, 20%, 0.631), hsla(358, 97%, 24%, 0.624)), url(../img/sucre.jpg); 
+            background: linear-gradient(to right, hsla(233, 88%, 20%, 0.631), hsla(358, 97%, 24%, 0.624)), url(../img/sucre.jpg); 
             background-repeat: no-repeat;
             background-size: cover;
-            background-attachment: fixed;
-            position: relative;
-            
+            widows: 100%;
+            position: relative;            
         }
     </style>
-</head>
-<body > 
-        <nav class="navbar navbar-light bg-light">
-            <div class="container">
-              <a class="navbar-brand" href="{{ route('store.index')}}">Inicio</a>
-            </div>
-          </nav>
-<br>
-        <div class="">
-            <section class="">
-                <div class="container">
-                    <div class="row ">
-                        <div class="col-xs-6 col-xs-offset-1 col-sm-6 col-sm-offset-0 ">
+@endpush
+@push('scripts')
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-                         <div class="well">
-                                <h3 class="text-center" style="font-family: 'Lobster', cursive; font-size: 27px;">Dirección</h3>
-                                <address>
-                                  <strong>Pais:</strong> Tu país<br>
-                                  <strong>Dirección:</strong> Tu dirección<br>
-                                  <strong>Ciudad:</strong> Tu ciudad<br>
-                                  <strong>Email:</strong> tucorreo@info.com
-                                </address>
-                            </div>
-                        </div>
+@endpush
 
-                    {{--    <div class="card text-white bg-primary mb-3" >
-                            
-                            <div class="card-body">
-                              <h5 class="card-title">Primary card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                          </div>--}}
 
-                        <div class="col-xs-6 col-sm-6 ">
-                            <div class="card text-white bg-primary mb-3" >
-                                
-                                <div class="card-body">
-                                  <h5 class="card-title">Primary card title</h5>
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <h2 class="tittles-pages text-center">Formulario de contacto</h2>
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">Tu nombre</label>
-                                    <div class="col-sm-10">	
-                                        <input type="text" class="form-control input-form-contact" placeholder="Escribe tu nombre">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">Tu Email</label>
-                                    <div class="col-sm-10">	
-                                        <input type="email" class="form-control input-form-contact" placeholder="Escribe tu Email">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">Asunto</label>
-                                    <div class="col-sm-10">	
-                                        <input type="text" class="form-control input-form-contact" placeholder="Asunto">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">Tu mensaje</label>
-                                    <div class="col-sm-10">	
-                                        <textarea class="form-control input-form-contact" rows="3" placeholder="Escribe tu mensaje"></textarea>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary pull-right">Enviar</button>
-                            </form>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-4 col-md-push-8">
-                            <h2 class="tittles-pages text-center">Info pedidos</h2>
-                            <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quidem ipsum atque numquam, sint odio nesciunt laborum repellat tenetur commodi beatae a, officia praesentium eius fuga illum totam veniam velit.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, nam ipsum dolores ut nesciunt sequi iste vitae iusto, unde placeat veniam quis earum atque omnis optio praesentium! Officia, ipsum, neque.
-                            </p>
-                        </div>
-                        <div class="col-xs-12 col-md-8 col-md-pull-4">
-                            <h2 class="tittles-pages text-center">Formulario de contacto</h2>
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">Tu nombre</label>
-                                    <div class="col-sm-10">	
-                                        <input type="text" class="form-control input-form-contact" placeholder="Escribe tu nombre">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">Tu Email</label>
-                                    <div class="col-sm-10">	
-                                        <input type="email" class="form-control input-form-contact" placeholder="Escribe tu Email">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">Asunto</label>
-                                    <div class="col-sm-10">	
-                                        <input type="text" class="form-control input-form-contact" placeholder="Asunto">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">Tu mensaje</label>
-                                    <div class="col-sm-10">	
-                                        <textarea class="form-control input-form-contact" rows="3" placeholder="Escribe tu mensaje"></textarea>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary pull-right">Enviar</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section> 
-        </div>
-    	<footer class="footer">
-            <div class="container-fluid">
-                <div class="col-xs-12 text-center">
-                    <h3>Siguenos en</h3>
-                    <ul class="list-unstyled list-social-icons">
-                        <li >
-                            <a href="#!">
-                               <i class="fa fa-facebook" style="background-color: #3B5998;"></i> 
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!">
-                                <i class="fa fa-google-plus" style="background-color: #DD4B39;"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!">
-                                <i class="fa fa-twitter"  style="background-color: #56A3D9;"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!">
-                                <i class="fa fa-youtube" style="background-color: #BF221F;"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <h4>Store &copy; 2021</h4>
-                </div>
-            </div>
-        </footer>  
-    </div>
-    <script src="{{ asset('js/jquery.js')}}"></script>
-    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
-</body>
-</html>

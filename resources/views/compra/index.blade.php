@@ -39,14 +39,13 @@
                             <i data-feather="edit"></i>
                         </a>
                         <a
-                            href="{{ route('logout') }}"
                             onclick="event.preventDefault();
-                            document.getElementById('compra-destroy').submit();"
+                            document.getElementById('compra-destroy{{ $compra->id }}').submit();"
                             class="text-white bg-danger p-1 rounded mr-1"
                         >
                             <i data-feather="trash-2"></i>
                         </a>
-                        <form id="compra-destroy" action="{{ route('compra.destroy', $compra->id) }}" method="POST" class="d-none">
+                        <form id="compra-destroy{{ $compra->id }}" action="{{ route('compra.destroy', $compra->id) }}" method="POST" class="d-none">
                             @csrf
                             @method('DELETE')
                         </form>

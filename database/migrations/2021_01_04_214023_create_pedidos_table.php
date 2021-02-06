@@ -20,9 +20,16 @@ class CreatePedidosTable extends Migration
             $table->integer('cantidad_retenida');
             $table->integer('cantidad_devuelta');
             $table->boolean('estado_p')->default(false);
+            $table->timestamps();
+        });
+
+        Schema::create('pedido_producto', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('pedido_id');
             $table->foreignId('producto_id');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -32,6 +39,7 @@ class CreatePedidosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pedidos');
+        Schema::dropIfExists('pedido');
     }
 }
+

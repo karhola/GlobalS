@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetalleVentaTable extends Migration
+class CreateVentasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,7 +20,7 @@ class CreateDetalleVentaTable extends Migration
             $table->integer('total_venta');
             $table->integer('beneficio_total_promotor');
             $table->integer('beneficio_total_oficina');
-            $table->foreignId('promotor_id');                         
+            $table->foreignId('promotor_id');
             $table->timestamps();
         });
 

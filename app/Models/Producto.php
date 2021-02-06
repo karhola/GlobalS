@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Models\Categoria;
 use App\Models\DetalleVenta;
-use App\Models\Producto;
 use App\Models\Compra;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -25,7 +24,7 @@ class Producto extends Model
 
     public function pedidos()
     {
-        return $this->belongsTo(Producto::class);
+        return $this->belongsTo(Pedido::class);
     }
 
 

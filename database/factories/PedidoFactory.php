@@ -27,7 +27,7 @@ class PedidoFactory extends Factory
             'cantidad_retenida' => $this->faker->randomNumber($nbDigits = 3 ),
             'cantidad_devuelta' => $this->faker->randomNumber($nbDigits = 3 ),
             'estado_p' => $this->faker->boolean,
-            'producto_id' => Producto::factory(),
+           // 'producto_id' => Producto::factory(),
         ];
     }
 }

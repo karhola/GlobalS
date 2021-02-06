@@ -24,11 +24,10 @@ class CreatePromotorsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('pedido_promotor', function (Blueprint $table){
+        Schema::create('pedido_promotor', function (Blueprint $table) {
             $table->id();
             $table->foreignId('promotor_id');
             $table->foreignId('pedido_id');
-          
             $table->timestamps();
         });
     }

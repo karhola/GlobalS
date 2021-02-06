@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Compra;
+use App\Models\Producto;
+use App\Models\Proveedor;
 use Illuminate\Http\Request;
 
 class CompraController extends Controller
@@ -14,32 +16,48 @@ class CompraController extends Controller
      */
     public function index()
     {
-        return view('compra.index',[ 
+        return view('compra.index',[
             'compras'=>Compra::all(),
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        return view('compra.create');
+        return view('compra.create', [ 'proveedors'=> Proveedor::all(),  'productos' => Producto::all()]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request  $rquest
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        $productos = explode(',', $request->productos[0]);
+        $cantidadProductos = explode(',', $request->cantidadProducto[0]);
+        $subtotalProductos = explode(',', $request->subtotalProducto[0]);
+        $importacionProductos = explode(',', $request->importacionProducto[0]);
+        $productoLista = [];
+        for ($i = 0 ; $i < count($productos) ; $i++){
+            $productoLista = $productoLista + [
+                $productos[$i] => [
+                    'cantidad' => $cantidadProductos[$i],
+                    'subtotal' => $subtotalProductos[$i],
+                    'coste_importacion' => $importacionProductos[$i],
+                ],
+            ];
+        }
         $compra = new Compra();
+        $compra->cantidad_compra = $request->cantidad_compra;
         $compra->fecha_compra = $request->fecha_compra;
+        $compra->costo_importacion_total = $request->costo_importacion_total;
+        $compra->total_compra = $request->total_compra;
+        $compra->proveedor_id = $request->proveedor_id;
         $compra->save();
+        $compra->productos()->attach($productoLista);
+
         return redirect()->route('compra.index');
     }
 
@@ -59,6 +77,9 @@ class CompraController extends Controller
      */
     public function edit(Compra $compra)
     {
+
+        $this->authorize('update', $compra );
+
         return view('compra.edit',[
             'compra'=>$compra
         ]);

@@ -13,9 +13,8 @@
         <tr>
             <td>ID</td>
             <td>FECHA DE VENTA</td>
-            <td>CANTIDAD</td>
-            <td>PRECIO UNITARIO</td>
             <td>TOTAL</td>
+            <td>CANTIDAD</td>
             <td>PROMOTOR</td>
             <td>ACCIONES</td>
         </tr>
@@ -25,9 +24,8 @@
         <tr>
            <td>{{$venta->id}}</td>
            <td>{{$venta->fecha_venta}}</td>
-           <td>{{$venta->cantidad}}</td>
-           <td>{{$venta->precio_unitario}}</td>
            <td>{{$venta->total_venta}}</td>
+            <td>{{$venta->cantidad_v}}</td>
            <td>{{$venta->promotor->nombre_promotor}}</td>
 
            <td>
@@ -39,9 +37,9 @@
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger btn-xs">ELIMINAR</button>
-                    </form>   
+                    </form>
                </div>
-        
+
            </td>
         </tr>
         @endforeach

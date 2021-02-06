@@ -1,4 +1,4 @@
-@extends('admin.layout')
+    @extends('admin.layout')
 @section('content_title')
     <div class="d-flex justify-content-between pt-5 px-5 align-items-center">
         <h2>Lista de productos</h2>
@@ -24,6 +24,7 @@
             <tr>
                 <td>{{$producto->id}}</td>
                 <td>{{$producto->nombre_producto}}</td>
+                <td>{{$producto->descripcion_producto}}</td>
                 <td>{{$producto->pcompra_producto}}</td>
                 <td>{{$producto->pventa_producto}}</td>
                 <td>{{$producto->stock_producto}}</td>

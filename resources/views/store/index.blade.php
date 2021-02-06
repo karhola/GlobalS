@@ -1,42 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('AdminLTE/plugins/fontawesome-free/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/estilos.css')}}">
-    <title>proyecto</title>
+@extends('store.nav')
+@section('content')
 
-</head>
 <body style="background-color: #fff;">
-    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand"  href="{{ route('detalleCompra.index')}}" >Global Sistem</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" aria-current="page" href="{{ route('store.index') }}">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('store')}}">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://www.facebook.com/Defensoria-de-la-Ni%C3%B1ez-y-Adolescencia-de-Yacuiba-1546144615684389/photos/?ref=page_internal" class="nav-link">Pagina de Facebook</a>
-                    </li>
-                </ul>
-                <a href="{{ route('cart-show') }}" class="cart position-relative d-inline-flex nav-link">
-                    <i class="fas fa fa-shopping-cart fa-lg"></i>
-                    <span class="cart-basket d-flex align-items-center justify-content-center">
-                        0
-                    </span>
-                </a>
-            </div>
-        </div>
-    </nav>
+    
     <header>
         <section class="textos-header">
             <h1>OFERTA DE PRODUCTOS</h1>
@@ -53,42 +19,96 @@
             <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
         </div>
     </main>
-    <div class="container">
-        @yield('content')
-    </div>
+  
     <main>
 
         </div>
 
         <section class="contenedor sobre-nosotros">
+            
             <h2 class="titulo">OFERTAS DE PRODUCTOS</h2>
-            <div class="contenedor-sobre-nosotros row">
-                <img src="/img/entrega.jpg" alt="" class="imagen-about-us">
-                <div class="contenido-textos">
+           
+            <div class="breadcrumb floo">
+                <div class="row">
+                    <div class="col-12 breadcrumb"><br><br></div>
+                </div>
+                <div class="row">
+                    <div class="col-5"></div>
+                    <div class="contenido-textos">
                     <h3><span>1</span>Los mejores productos</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatem quaerat nemo quae ipsa recusandae nam illum, cum maiores veniam, dolore id dolores. Suscipit ea, dolore voluptates nihil iure optio!</p>
                     <h3><span>2</span>Los mejores productos</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatem quaerat nemo quae ipsa recusandae nam illum, cum maiores veniam, dolore id dolores. Suscipit ea, dolore voluptates nihil iure optio!</p>
+                    </div>
                 </div>
+               
             </div>
+         
         </section>
-{{--         
+
             <section class="portafolio">
                 <div class="contenedor">
                     <h2 class="titulo">Lista de productos</h2>
-                    <div class="galeria-port">
-                        @foreach ($productos as $producto)
+                    <div class="galeria-port">   
                             <div class="imagen-port">
-                                <img src="{{ asset('imagenes/'.$producto->pfoto) }}" alt="{{ $producto->nombre_producto }}">
+                                <img src="/img/licuadora2.jpg" alt="">
                                 <div class="hover-galeria">
-                                    <img src="/img/gloo.gif" alt="{{ $producto->nombre_producto }}">
-                                    <p>{{ $producto->nombre_producto }}</p>
+                                    <img src="/img/gloo.gif" alt="">
+                                    <p>ofertas</p>
                                 </div>
-                            </div>
-                        @endforeach
+                            </div> 
+                            <div class="imagen-port">
+                                <img src="/img/masajeador.jpg" alt="">
+                                <div class="hover-galeria">
+                                    <img src="/img/gloo.gif" alt="">
+                                    <p>ofertas</p>
+                                </div>
+                            </div> 
+                            <div class="imagen-port">
+                                <img src="/img/rompe.gif" alt="">
+                                <div class="hover-galeria">
+                                    <img src="/img/gloo.gif" alt="">
+                                    <p>ofertas</p>
+                                </div>
+                            </div> 
+                            <div class="imagen-port">
+                                <img src="/img/foco.jpg" alt="">
+                                <div class="hover-galeria">
+                                    <img src="/img/gloo.gif" alt="">
+                                    <p>ofertas</p>
+                                </div>
+                            </div> 
+                            <div class="imagen-port">
+                                <img src="/img/licuadora4.jpg" alt="">
+                                <div class="hover-galeria">
+                                    <img src="/img/gloo.gif" alt="">
+                                    <p>ofertas</p>
+                                </div>
+                            </div> 
+                            <div class="imagen-port">
+                                <img src="/img/cara.jpg" alt="">
+                                <div class="hover-galeria">
+                                    <img src="/img/gloo.gif" alt="">
+                                    <p>ofertas</p>
+                                </div>
+                            </div> 
+                            <div class="imagen-port">
+                                <img src="/img/banquito.jpg" alt="">
+                                <div class="hover-galeria">
+                                    <img src="/img/gloo.gif" alt="">
+                                    <p>ofertas</p>
+                                </div>
+                            </div> 
+                            <div class="imagen-port">
+                                <img src="/img/laminaEDU2.jpg" alt="">
+                                <div class="hover-galeria">
+                                    <img src="/img/gloo.gif" alt="">
+                                    <p>ofertas</p>
+                                </div>
+                            </div> 
                     </div>
                 </div>
-            </section> --}}
+            </section> 
          
         <section class="container">
             <br>
@@ -146,8 +166,8 @@
                 </div>
             </div>
         </section>
-
-    <!--   <section class="clientes contenedor">
+<!--
+      <section class="clientes contenedor">
             <h2 class="titulo">Que dicen nuestros clientes</h2>
             <div class="cards">
                 <div class="card">
@@ -165,51 +185,33 @@
                     </div>
                 </div>
             </div>
-        </section>
-    -->
+        </section>  -->
+    
 
         <section class="about-services">
             <div class="contenedor">
                 <h2 class="titulo">Nuestros Servicios</h2>
                 <div class="servicio-cont">
                     <div class="servicio-ind">
-                        <img class="rounded-circle" src="/img/glo1.jpg" alt="">
-                        <h3>Name</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, explicabo.</p>
+                        <img  src="/img/promotor.gif" alt="" height="150px">
+                        <h3>Ventas Directas</h3>
+                        <p>Nuestros promotores realizan ventas en cualquier parte de la cuidad con productos de ocacion.</p>
                     </div>
                     <div class="servicio-ind">
-                        <img class="rounded-circle" src="/img/glo1.jpg" alt="">
-                        <h3>Name</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, explicabo.</p>
+                        <img  src="/img/linea.gif" alt="" height="150px">
+                        <h3>Ventas por Internet</h3>
+                        <p>Descubre nuestra variedad de productos y las ofertas en esta nuestra pagina web</p>
                     </div>
                     <div class="servicio-ind">
-                        <img class="rounded-circle" src="/img/glo1.jpg" alt="">
-                        <h3>Name</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, explicabo.</p>
+                        <img  src="/img/lider.gif" alt="" height="150px">
+                        <h3>Cursos de Liderazgo y Motivacion</h3>
+                        <p>Forma parte de nuestro equipo, descubre tus habilidades conviertete en una persona "EMPRENDEDORA" </p>
                     </div>
                 </div>
             </div>
         </section>
 
-    </main>
-    <footer>
-        <div class="contenedor-footer">
-            <div class="content-foo">
-                <h4>Phone</h4>
-                <p>4565465</p>
-            </div>
-            <div class="content-foo">
-                <h4>Email</h4>
-                <p>4565465</p>
-            </div>
-            <div class="content-foo">
-                <h4>Location</h4>
-                <p>4565465</p>
-            </div>
-        </div>
-        <h2 class="titulo-final">&copy; KarHola Desing | Global Sistem</h2>
-    </footer>
-    <script src="{{ asset('js/jquery.js')}}"></script>
-    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+    </main> 
+    
 </body>
-</html>
+@endsection
